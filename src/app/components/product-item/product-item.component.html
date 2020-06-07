@@ -1,16 +1,38 @@
 <div class="product-item">
   <div class="product-item-preview">
-    <img [src]="item.images[0].path"
+    <img [src]="setLargeImage()"
          class="product-item-preview-image"
          alt="p1">
   </div>
-  <div class="product-item-counsel">
-    <img src="" alt="">
+  <div class="product-item-footer">
+    <div class="product-item-counsel">
+      <ng-image-slider #nav
+                       [attr.data-image]="indexLargeImage"
+                       [images]="item.images"
+                       [animationSpeed]="0.22"
+                       [imageSize]="{width:40, height:40, space:5}"
+                       [showArrow]="false"
+                       [imagePopup]="false"
+                       (imageClick)="imgClick($event)"
+                       (arrowClick)="arrowClick()"
+      ></ng-image-slider>
+
+      <a href="#" (click)="prevImageClick()"
+         class="product-item-counsel-arrow product-item-counsel-arrow-prev"
+         [class.disable]="nav.sliderPrevDisable"
+      ></a>
+      <a href="#" (click)="nextImageClick()"
+         class="product-item-counsel-arrow product-item-counsel-arrow-next"
+         [class.disable]="nav.sliderNextDisable"
+      ></a>
+
+    </div>
+    <div class="product-item-details">
+      <div class="product-item-category">{{item.category}}</div>
+      <div class="product-item-name">{{item.name}}</div>
+      <div class="product-item-price">{{item.price | currency: 'USD' : 'symbol' : '1.0-0'}}</div>
+      <div class="product-item-balance">на складе: {{item.balance}}</div>
+    </div>
   </div>
-  <div class="product-item-details">
-    <div class="product-item-category">{{item.category}}</div>
-    <div class="product-item-name">{{item.name}}</div>
-    <div class="product-item-price">{{item.price | currency: 'USD' : 'symbol' : '1.0-0'}}</div>
-    <div class="product-item-balance">на складе: {{item.balance}}</div>
-  </div>
+
 </div>

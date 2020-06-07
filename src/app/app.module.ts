@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {NgImageSliderModule} from "ng-image-slider";
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsListPageComponent } from './pages/products-list-page/products-list-page.component';
@@ -24,7 +27,8 @@ import { ProductItemComponent } from './components/product-item/product-item.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

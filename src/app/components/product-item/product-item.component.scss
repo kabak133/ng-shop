@@ -9,6 +9,7 @@
   }
   .product-item-preview {
     position: relative;
+    margin-bottom: 15px;
     &:before{
       content: '';
       display: block;
@@ -58,8 +59,60 @@
     }
 
   }
+  .product-item-footer{
+    position: relative;
+  }
 
   .product-item-counsel {
+    background: #fff;
+    width: 100%;
+    padding: 10px 30px 0;
+    position: absolute;
+    top: -65px;
+    display: block;
+    transition: opacity 0.22s;
+    //opacity: 0;
+    .product-item-counsel-arrow{
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url("/assets/img/icons/arr.svg") center center no-repeat;
+      background-size: contain;
+      top: 50%;
+      margin-top: -10px;
+      &.product-item-counsel-arrow-prev{
+        left: 5px;
+        transform: rotate(180deg);
+      }
+
+      &.product-item-counsel-arrow-next{
+        right: 5px;
+      }
+
+      &.disable{
+        opacity: .22;
+      }
+
+    }
+  }
+  &:hover{
+    .product-item-counsel{
+      opacity: 1;
+    }
+  }
+  .product-item-footer{
+    position: relative;
+    .product-item-counsel{
+      position: absolute;
+    }
+  }
+}
+
+:host ::ng-deep {
+  .ng-image-slider .ng-image-slider-container .main .main-inner .img-div img{
+    border-radius: 0;
 
   }
 }
+
+//li
