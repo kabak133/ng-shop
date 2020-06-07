@@ -1,0 +1,41 @@
+@import "../../../assets/scss/partials/varitables";
+
+.navbar {
+  position: relative;
+  top: 0;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  .navbar-logo {
+    display: block;
+    width: 106px;
+    height: 39px;
+    margin: 0 auto;
+  }
+
+  .nav-bar-card {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    .card-icon {
+      margin-right: 8px;
+    }
+
+    .card-count {
+      width: 20px;
+      height: 20px;
+      font-weight: $font-weight-bold;
+      background: $text-color;
+      color: $white-color;
+      text-align: center;
+      line-height: 20px;
+    }
+  }
+}
