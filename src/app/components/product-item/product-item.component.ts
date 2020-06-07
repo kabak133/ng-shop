@@ -13,7 +13,12 @@ export class ProductItemComponent implements OnInit {
     price: 320,
     balance: 133,
     images:[
-
+      {path:'/assets/img/product-images/p1.jpg'},
+      {path:'/assets/img/product-images/p2.jpg'},
+      {path:'/assets/img/product-images/p3.jpg'},
+      {path:'/assets/img/product-images/p4.jpg'},
+      {path:'/assets/img/product-images/p5.jpg'},
+      {path:'/assets/img/product-images/p6.jpg'}
     ]
   }
   constructor() { }
