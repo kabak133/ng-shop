@@ -1,6 +1,8 @@
 <div class="product-item">
-  <div class="product-item-preview-image">
-    <img src="/assets/img/product-images/p1.jpg" alt="p1">
+  <div class="product-item-preview">
+    <img src="/assets/img/product-images/p1.jpg"
+         class="product-item-preview-image"
+         alt="p1">
   </div>
   <div class="product-item-counsel">
     <img src="" alt="">
@@ -8,7 +10,7 @@
   <div class="product-item-details">
     <div class="product-item-category">{{item.category}}</div>
     <div class="product-item-name">{{item.name}}</div>
-    <div class="product-item-price">{{item.price}}</div>
-    <div class="product-item-balance">{{item.balance}}</div>
+    <div class="product-item-price">{{item.price | currency: 'USD' : 'symbol' : '1.0-0'}}</div>
+    <div class="product-item-balance">на складе: {{item.balance}}</div>
   </div>
 </div>
