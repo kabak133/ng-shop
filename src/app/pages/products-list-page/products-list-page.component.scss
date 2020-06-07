@@ -1,0 +1,12 @@
+.wrapper-side-bar{
+  display: flex;
+  outline: 1px solid red;
+  .side-bar-left{
+    flex: 0 0 25%;
+    max-width: 310px;
+  }
+  .wrapper-content{
+    flex: 0 0 1;
+    max-width: 100%;
+  }
+}
