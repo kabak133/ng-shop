@@ -1,0 +1,35 @@
+@import "partials/varitables";
+
+.product-item {
+  .product-item-preview-image {
+
+  }
+
+  .product-item-counsel {
+
+  }
+
+  .product-item-details {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .product-item-category {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-xs;
+      line-height: $font-size-sm;
+      letter-spacing: 1px;
+    }
+
+    .product-item-name {
+
+    }
+
+    .product-item-price {
+
+    }
+
+    .product-item-balance {
+
+    }
+  }
+}
