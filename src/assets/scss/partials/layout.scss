@@ -10,3 +10,26 @@
     padding-right: 15px;
   }
 }
+
+.row{
+  margin-left: -34px;
+  margin-right: -34px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.col{
+  padding-left: 34px;
+  padding-right: 34px;
+  flex: 0 0 calc(100% / 3);
+  max-width: calc(100% / 3);
+
+  @media all and (max-width: 1024px){
+    flex: 0 0 calc(100% / 2);
+    max-width: calc(100% / 2);
+  }
+
+  @media all and (max-width: 720px){
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
