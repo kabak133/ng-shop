@@ -1,8 +1,10 @@
 import {Injectable} from '@angular/core';
-import {State, Action, StateContext} from '@ngxs/store';
+import {State, Action, StateContext, Selector} from '@ngxs/store';
 import {GetProductsListAction} from './products-list.actions';
 import {ProductItemModel} from "../../models/product-item-model";
 import {ApiProductsService} from "../../../services/api-products.service";
+
+import {tap} from "rxjs/operators";
 
 export class ProductsListStateModel {
   public productsList: ProductItemModel[];
@@ -21,15 +23,14 @@ export class ProductsListState {
   constructor(private apiProductsService: ApiProductsService) {
   }
 
+  @Selector()
+  static productsList(state: ProductsListStateModel) {
+    return state.productsList
+  }
+
   @Action(GetProductsListAction)
-  getProDuctList({getState, setState}: StateContext<ProductsListStateModel>) {
-    // const state = getState();
-    //setState({ items: [ ...state.items, payload ] });
-    this.apiProductsService.getProducts().subscribe((productsList) => {
-      console.log(productsList)
-      setState({
-        productsList
-      })
-    })
+  getProductList({patchState}: StateContext<ProductsListStateModel>) {
+    return this.apiProductsService.getProducts()
+      .pipe(tap(productsList => patchState({productsList: [...productsList]})))
   }
 }

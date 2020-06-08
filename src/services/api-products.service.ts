@@ -22,7 +22,6 @@ export class ApiProductsService {
     return this.http.get(this.productsURL, this.httpOptions).pipe(
       map(({data}: IProductListResponse) => data),
       catchError(err => {
-        console.log(err);
         return throwError(err);
       })
     );

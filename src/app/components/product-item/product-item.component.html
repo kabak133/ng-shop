@@ -5,11 +5,11 @@
          alt="p1">
   </div>
   <div class="product-item-footer"
-      >
+  >
     <div class="product-item-counsel">
-      <ng-image-slider #nav
+      <!--<ng-image-slider #nav
                        [attr.data-image]="indexLargeImage"
-                       [images]="item.images"
+                       [images]="itemImages()"
                        [animationSpeed]="0.22"
                        [imageSize]="{width:40, height:40, space:5}"
                        [showArrow]="false"
@@ -19,13 +19,23 @@
       ></ng-image-slider>
 
       <span (click.stop)="prevImageClick()"
-         class="product-item-counsel-arrow product-item-counsel-arrow-prev"
-         [class.disable]="nav.sliderPrevDisable"
+            class="product-item-counsel-arrow product-item-counsel-arrow-prev"
+            [class.disable]="nav.sliderPrevDisable"
       ></span>
       <span (click.stop)="nextImageClick()"
-         class="product-item-counsel-arrow product-item-counsel-arrow-next"
-         [class.disable]="nav.sliderNextDisable"
+            class="product-item-counsel-arrow product-item-counsel-arrow-next"
+            [class.disable]="nav.sliderNextDisable"
+      ></span>-->
+
+      <span (click.stop)="prevImageClick()"
+            class="product-item-counsel-arrow product-item-counsel-arrow-prev"
+
       ></span>
+      <span (click.stop)="nextImageClick()"
+            class="product-item-counsel-arrow product-item-counsel-arrow-next"
+
+      ></span>
+
 
     </div>
     <div class="product-item-details">

@@ -1,7 +1,7 @@
 <div class="wrapper-product-list">
   <div class="row">
-    <div class="col" *ngFor="let i of item">
-      <app-product-item></app-product-item>
+    <div class="col" *ngFor="let item of productList">
+      <app-product-item [item]="item"></app-product-item>
     </div>
   </div>
 </div>
