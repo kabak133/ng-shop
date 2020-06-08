@@ -1,6 +1,11 @@
 import {Injectable} from '@angular/core';
 import {State, Action, StateContext, Selector} from '@ngxs/store';
-import {GetProductsListAction, GetProductsListByCategory, ProductsListBySorting} from './products-list.actions';
+import {
+  GetProductsListAction,
+  GetProductsListByCategory,
+  GetProductsListByCategorySort,
+  ProductsListBySorting
+} from './products-list.actions';
 import {ProductItemModel} from "../../models/product-item-model";
 import {ApiProductsService} from "../../../services/api-products.service";
 
@@ -43,7 +48,13 @@ export class ProductsListState {
 
   @Action(ProductsListBySorting)
   getProductsListBySorting({patchState}: StateContext<ProductsListStateModel>, {sorting}:ProductsListBySorting) {
-    return this.apiProductsService.getProductsSorting(sorting)
+    return this.apiProductsService.getProductsSorting({sorting})
+      .pipe(tap(productsList => patchState({productsList: productsList})))
+  }
+
+  @Action(GetProductsListByCategorySort)
+  GetProductsListByCategorySort({patchState}: StateContext<ProductsListStateModel>, {category, sorting}:GetProductsListByCategorySort) {
+    return this.apiProductsService.getProductsCategorySorting({category, sorting})
       .pipe(tap(productsList => patchState({productsList: productsList})))
   }
 }

@@ -3,7 +3,7 @@ import {slideUpDown} from "../../animations/slideUpDown";
 import {Store} from "@ngxs/store";
 import {
   GetProductsListAction,
-  GetProductsListByCategory, ProductsListBySorting
+  GetProductsListByCategory, GetProductsListByCategorySort, ProductsListBySorting
 } from "../../../shared/state/products-list/products-list.actions";
 
 export const DESC = "decs"
@@ -31,18 +31,19 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectCategory(category: string | undefined) {
+  selectCategory(category: string | undefined): void {
     this.selectedCategory = category
-    if (category) {
-      this.store.dispatch(new GetProductsListByCategory(category))
-    } else {
-      this.store.dispatch(new GetProductsListAction)
-    }
+    this.selectByCategoryWithSort()
   }
 
-  selectSorting(sorting: string | undefined) {
+  selectSorting(sorting: string | undefined): void {
     this.selectedSorting = sorting
-    this.store.dispatch(new ProductsListBySorting({sorting}))
+    this.selectByCategoryWithSort()
+  }
+
+
+  selectByCategoryWithSort() {
+   this.store.dispatch(new GetProductsListByCategorySort(this.selectedCategory, this.selectedSorting))
   }
 
 }

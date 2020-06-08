@@ -62,4 +62,33 @@ export class ApiProductsService {
       })
     );
   }
+
+
+  public getProductsCategorySorting({category, sorting}){
+    console.log('getProductsCategorySorting', {category, sorting})
+    return this.http.get(this.productsURL, this.httpOptions).pipe(
+      map(({data}: IProductListResponse) => {
+
+        let result = data
+        if(category){
+          result = result.filter(el => el.category.toLowerCase() === category.toLowerCase())
+        }
+
+        if(sorting){
+          result = result.sort((a, b) => {
+            if (sorting === DESC) {
+              return b.price - a.price
+            } else if (sorting === ASC) {
+              return a.price - b.price
+            } else if (sorting === 'popular') {
+              return b.id - a.id
+            } else if (sorting === 'popular') {
+              return a.id - b.id
+            }
+          })
+        }
+        return result
+      })
+    )
+  }
 }

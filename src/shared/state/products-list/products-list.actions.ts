@@ -21,3 +21,10 @@ export class ProductsListBySorting {
   constructor(public sorting) {
   }
 }
+
+export class GetProductsListByCategorySort {
+  static readonly type = '[ProductsListBySorting] get sorted products';
+
+  constructor(public category, public sorting) {
+  }
+}
