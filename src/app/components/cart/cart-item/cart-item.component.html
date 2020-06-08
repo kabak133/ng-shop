@@ -1,1 +1,29 @@
-<p>cart-item works!</p>
+<div class="cart-item-wrapper">
+  <div class="cart-item-image-container">
+    <img [src]="productItem.images[0].thumbImage"
+         class="cart-item-image"
+         alt="">
+  </div>
+  <div class="cart-item-info">
+    <div class="cart-item-info-name">{{productItem.name}}</div>
+    <div class="cart-item-info-count-wrapper">
+      <div class="cart-item-info-count-select">
+        <div class="count-select decrement-count"
+          (click)="decrementCountProduct()"
+        > - </div>
+        <input type="number"
+               class="count-products"
+               name="count-products"
+               min="0"
+               max="99"
+               #productCount="ngModel"
+               (change)="productCountChanged(productCount)"
+               [(ngModel)]="productItem.count"
+        >
+        <div class="count-select increment-count"
+             (click)="incrementCountProduct()"> + </div>
+      </div>
+      <div class="cart-item-info-count-price">{{productItem.price | currency: 'USD' : 'symbol' : '1.0-0'}}</div>
+    </div>
+  </div>
+</div>

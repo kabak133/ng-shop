@@ -15,6 +15,7 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart/cart-item/cart-item.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CartItemComponent } from './components/cart/cart-item/cart-item.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

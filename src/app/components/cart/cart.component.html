@@ -8,9 +8,19 @@
     <div class="shop-cart-close">
       <div class="close-icon close-icon-white"></div>
     </div>
-    <div class="shop-cart-products-list">
 
+    <div class="shop-cart-container-content">
+      <div class="shop-cart-products-list">
+        <app-cart-item *ngFor="let item of productsInCart"
+        ></app-cart-item>
+      </div>
+
+      <div class="total-count-wrapper">
+        <div class="total-count-title">Итого</div>
+        <div class="total-count">{{ 666 | currency: 'USD' : 'symbol' : '1.0-0'}}</div>
+      </div>
     </div>
+
 
     <div class="shop-cart-footer">
       <button class="btn btn-full-width btn-white">КУПИТЬ</button>

@@ -22,3 +22,13 @@ a {
   text-decoration: none;
   background-color: transparent;
 }
+
+input,
+select,
+textarea{
+  &:active,
+  &:focus{
+    outline: none;
+  }
+  border: 2px solid #000;
+}

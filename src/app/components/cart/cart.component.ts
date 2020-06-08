@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
 
   countProducts = 2
+  productsInCart= [ 1, 2]
 
   constructor() { }
 

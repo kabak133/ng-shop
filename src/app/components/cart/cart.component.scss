@@ -39,15 +39,33 @@
     top: 0;
     bottom: 0;
     width: 420px;
-    max-width: 100vw;
+    max-width: 100%;
+    min-width: 320px;
     background: $bg-cart;
     padding: 40px;
+    color: $white-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .shop-cart-close {
       display: flex;
       justify-content: flex-end;
-      margin-bottom: 75px;
+      position: absolute;
+      right: 40px;
+      top: 40px;
     }
+    .shop-cart-container-content{
+      padding-top: 75px;
+    }
+  }
+  .total-count-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 0;
+    font-size: $font-size-sl;
+    font-weight: $font-weight-bold;
   }
 
 
