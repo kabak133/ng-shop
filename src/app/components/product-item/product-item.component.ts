@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgImageSliderComponent} from "ng-image-slider";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-product-item',
@@ -13,6 +14,7 @@ export class ProductItemComponent implements OnInit {
   largeImage: string;
   indexLargeImage: number;
   item = {
+    id: 1,
     name: 'Рубашка на пуговицах',
     category: 'РУБАШКИ',
     price: 320,
@@ -39,8 +41,7 @@ export class ProductItemComponent implements OnInit {
     ]
   }
 
-  constructor() {
-  }
+  constructor(private router: Router){}
 
   ngOnInit(): void {
     this.largeImage = this.item.images[0].thumbImage
@@ -61,14 +62,15 @@ export class ProductItemComponent implements OnInit {
   }
 
   imgClick(imgIndx){
-    //console.log(img)
-
     this.indexLargeImage = imgIndx
   }
 
   arrowClick(){
     console.log(this.slider)
-
   }
 
+  moveToProductDetails(){
+    console.log('moveToProductDetails')
+    this.router.navigate(['/product', this.item.id]);
+  }
 }

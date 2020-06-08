@@ -19,6 +19,7 @@ import {FormsModule} from "@angular/forms";
 import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ClickStopPropagation} from "./directives/click-stop-propagation";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ProductItemComponent,
     CartComponent,
     CartItemComponent,
-    CartPageComponent
+    CartPageComponent,
+    ClickStopPropagation
   ],
   imports: [
     BrowserModule,

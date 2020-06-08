@@ -12,8 +12,8 @@ const routes: Routes = [
   },
   {
     path:'product',
-    redirectTo: '',
-    pathMatch: 'full',
+    /*redirectTo: '',
+    pathMatch: 'full',*/
     children:[
       {
        path: ":id",

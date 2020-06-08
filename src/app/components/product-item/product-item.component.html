@@ -1,10 +1,11 @@
-<div class="product-item">
+<div class="product-item" (click)="moveToProductDetails()">
   <div class="product-item-preview">
     <img [src]="setLargeImage()"
          class="product-item-preview-image"
          alt="p1">
   </div>
-  <div class="product-item-footer">
+  <div class="product-item-footer"
+      >
     <div class="product-item-counsel">
       <ng-image-slider #nav
                        [attr.data-image]="indexLargeImage"
@@ -17,14 +18,14 @@
                        (arrowClick)="arrowClick()"
       ></ng-image-slider>
 
-      <a href="#" (click)="prevImageClick()"
+      <span (click.stop)="prevImageClick()"
          class="product-item-counsel-arrow product-item-counsel-arrow-prev"
          [class.disable]="nav.sliderPrevDisable"
-      ></a>
-      <a href="#" (click)="nextImageClick()"
+      ></span>
+      <span (click.stop)="nextImageClick()"
          class="product-item-counsel-arrow product-item-counsel-arrow-next"
          [class.disable]="nav.sliderNextDisable"
-      ></a>
+      ></span>
 
     </div>
     <div class="product-item-details">
