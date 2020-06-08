@@ -13,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProductItemComponent } from './components/product-item/product-item.com
     SidebarComponent,
     NotFoundComponent,
     ProductsListComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
