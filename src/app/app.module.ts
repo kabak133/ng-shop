@@ -16,6 +16,7 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart/cart-item/cart-item.component';
 import {FormsModule} from "@angular/forms";
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     NgImageSliderModule,
-    FormsModule
+    FormsModule,
+    PerfectScrollbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

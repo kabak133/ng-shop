@@ -10,10 +10,13 @@
     </div>
 
     <div class="shop-cart-container-content">
-      <div class="shop-cart-products-list">
-        <app-cart-item *ngFor="let item of productsInCart"
-        ></app-cart-item>
-      </div>
+      <perfect-scrollbar style="max-width: 600px; max-height: 65vh">
+
+        <div class="shop-cart-products-list">
+          <app-cart-item *ngFor="let item of productsInCart"
+          ></app-cart-item>
+        </div>
+      </perfect-scrollbar>
 
       <div class="total-count-wrapper">
         <div class="total-count-title">Итого</div>
