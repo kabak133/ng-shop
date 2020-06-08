@@ -45,3 +45,20 @@
     }
   }
 }
+
+.select-icon {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  display: inline-block;
+  transform: rotate(-45deg);
+  &:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-width: 0 0 2px 2px;
+    border-style: solid;
+    border-color: $text-color;
+  }
+}

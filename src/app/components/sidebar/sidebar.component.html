@@ -4,7 +4,25 @@
     <li class="side-bar-menu_item">Плащи</li>
     <li class="side-bar-menu_item">Кроссовки</li>
     <li class="side-bar-menu_item">Рубашки</li>
-    <li class="side-bar-menu_item">Сортировать</li>
+
+    <!--TODO: to separate single component   -->
+    <li class="side-bar-menu_item">
+      <span class="shop-select"
+      [class.shop-select-open]="showSelect">
+        <span class="select-label"
+          (click)="showSelect = !showSelect"
+        >Сортировать <i class="select-icon"></i></span>
+        <ul class="select-options"
+            *ngIf="showSelect"
+            [@slideUpDown]>
+          <li class="select-options-item active">От дорогих к дешевым</li>
+          <li class="select-options-item">От дешевых к дорогим</li>
+          <li class="select-options-item">Популярные</li>
+          <li class="select-options-item">Новые</li>
+        </ul>
+      </span>
+
+    </li>
   </ul>
 </div>
 
