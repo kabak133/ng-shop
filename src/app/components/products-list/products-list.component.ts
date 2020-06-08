@@ -20,6 +20,7 @@ export class ProductsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.store.dispatch(new GetProductsListAction)
     this.productList$.subscribe(productList => {
       this.productList = productList
     })
