@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {slideInOut} from "../animations/sliddInOut";
+import {slideInOut} from "../../animations/sliddInOut";
 
 @Component({
   selector: 'app-cart',
