@@ -12,3 +12,7 @@ export interface ProductItemModel {
   balance: number,
   images: ProductItemImageModel[]
 }
+
+export interface IProductListResponse{
+  data: ProductItemModel[]
+}
