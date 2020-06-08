@@ -1,5 +1,47 @@
-.cart-icon{
+.cart-icon {
   width: 23px;
   height: 23px;
   background-image: url("/assets/img/icons/cart.svg");
+}
+
+.close-icon {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transition: opacity 0.22s;
+    opacity: $opacity-hover;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 4px;
+    top: 11px;
+    width: 19px;
+    height: 2px;
+    display: block;
+    content: '';
+    background: $text-color;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+  &.close-icon-white {
+    &:before,
+    &:after {
+      background: $white-color;
+
+    }
+  }
 }

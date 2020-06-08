@@ -1,4 +1,19 @@
-<div class="nav-bar-cart">
+<div class="shop-cart"
+     [class.shop-car-empty]="emptyCart()">
   <div class="cart-icon"></div>
-  <div class="cart-count">{{countProducts}}</div>
+  <div class="shop-cart-count">{{countProducts}}</div>
+
+
+  <div class="shop-cart-container">
+    <div class="shop-cart-close">
+      <div class="close-icon close-icon-white"></div>
+    </div>
+    <div class="shop-cart-products-list">
+
+    </div>
+
+    <div class="shop-cart-footer">
+      <button class="btn btn-full-width btn-white">КУПИТЬ</button>
+    </div>
+  </div>
 </div>

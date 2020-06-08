@@ -5,9 +5,11 @@
 
 @import "./partials/layout";
 @import "./partials/icons";
+@import "./partials/buttons";
 
 body{
   font-size: $font-size-base;
   font-family: $font-family;
   font-weight: $font-weight-base;
+  background: $bg-body;
 }

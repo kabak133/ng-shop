@@ -14,4 +14,8 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  emptyCart() : boolean{
+    return this.countProducts === 0
+  }
+
 }
