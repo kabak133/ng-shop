@@ -17,6 +17,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart/cart-item/cart-item.component';
 import {FormsModule} from "@angular/forms";
 import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -29,14 +31,16 @@ import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
     ProductsListComponent,
     ProductItemComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgImageSliderModule,
     FormsModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
