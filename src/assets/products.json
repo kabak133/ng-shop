@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Рубашка на пуговицах",
-      "category": "РУБАШКИ",
+      "category": "ПЛАЩИ",
       "price": 320,
       "balance": 20,
       "images": [
@@ -57,7 +57,7 @@
     {
       "id": 3,
       "name": "Кроссовки «Kaiwa» Y3",
-      "category": "Обувь",
+      "category": "КРОССОВКИ",
       "price": 240,
       "balance": 134,
       "images": [
@@ -84,7 +84,7 @@
     {
       "id": 4,
       "name": "Рубашка с принтом",
-      "category": "РУБАШКИ",
+      "category": "ПЛАЩИ",
       "price": 1240,
       "balance": 11,
       "images": [
@@ -111,7 +111,7 @@
     {
       "id": 5,
       "name": "Кроссовки с пряжками",
-      "category": "Обувь",
+      "category": "КРОССОВКИ",
       "price": 390,
       "balance": 11,
       "images": [
@@ -136,9 +136,9 @@
       ]
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "Укороченные зауженны",
-      "category": "Обувь",
+      "category": "РУБАШКИ",
       "price": 647,
       "balance": 7,
       "images": [

@@ -18,10 +18,13 @@
   flex-wrap: wrap;
 }
 .col{
+  width: 100%;
+  min-height: 1px;
   padding-left: 34px;
   padding-right: 34px;
   flex: 0 0 calc(100% / 3);
   max-width: calc(100% / 3);
+
 
   @media all and (max-width: 1024px){
     flex: 0 0 calc(100% / 2);

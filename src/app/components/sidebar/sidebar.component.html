@@ -1,9 +1,17 @@
 <div class="side-bar">
   <ul class="side-bar-menu">
-    <li class="side-bar-menu_item active">Все</li>
-    <li class="side-bar-menu_item">Плащи</li>
-    <li class="side-bar-menu_item">Кроссовки</li>
-    <li class="side-bar-menu_item">Рубашки</li>
+    <li class="side-bar-menu_item"
+        [class.active]="selectedCategory === undefined"
+        (click)="selectCategory(undefined)">Все</li>
+    <li class="side-bar-menu_item"
+        [class.active]="selectedCategory === 'Плащи'"
+        (click)="selectCategory('Плащи')">Плащи</li>
+    <li class="side-bar-menu_item"
+        [class.active]="selectedCategory === 'Кроссовки'"
+        (click)="selectCategory('Кроссовки')">Кроссовки</li>
+    <li class="side-bar-menu_item"
+        [class.active]="selectedCategory === 'Рубашки'"
+        (click)="selectCategory('Рубашки')">Рубашки</li>
 
     <!--TODO: to separate single component   -->
     <li class="side-bar-menu_item">
@@ -15,10 +23,22 @@
         <ul class="select-options"
             *ngIf="showSelect"
             [@slideUpDown]>
-          <li class="select-options-item active">От дорогих к дешевым</li>
-          <li class="select-options-item">От дешевых к дорогим</li>
-          <li class="select-options-item">Популярные</li>
-          <li class="select-options-item">Новые</li>
+          <li class="select-options-item active"
+              [class.active]="selectedSorting === DESC"
+              (click)="selectSorting(DESC)"
+          >От дорогих к дешевым</li>
+          <li class="select-options-item"
+              [class.active]="selectedSorting === ASC"
+              (click)="selectSorting(ASC)"
+          >От дешевых к дорогим</li>
+          <li class="select-options-item"
+              [class.active]="selectedSorting === 'popular'"
+              (click)="selectSorting('popular')"
+          >Популярные</li>
+          <li class="select-options-item"
+              [class.active]="selectedSorting === 'new'"
+              (click)="selectSorting('new')"
+          >Новые</li>
         </ul>
       </span>
 

@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {IProductListResponse, ProductItemModel} from "../shared/models/product-item-model";
 import {catchError, map} from "rxjs/operators";
+import {ASC, DESC} from "../shared/types/constants";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,41 @@ export class ApiProductsService {
   public getProducts(): Observable<ProductItemModel[]> {
     return this.http.get(this.productsURL, this.httpOptions).pipe(
       map(({data}: IProductListResponse) => data),
+      catchError(err => {
+        return throwError(err);
+      })
+    );
+  }
+
+  /** get products from API */
+  public getProductsByCategory({category}): Observable<ProductItemModel[]> {
+    return this.http.get(this.productsURL, this.httpOptions).pipe(
+      map(({data}: IProductListResponse) => {
+        return data.filter(el => el.category.toLowerCase() === category.toLowerCase())
+      }),
+      catchError(err => {
+        return throwError(err);
+      })
+    );
+  }
+
+    /** get products from API with imitation sorting by server */
+  public getProductsSorting({sorting}): Observable<ProductItemModel[]> {
+    return this.http.get(this.productsURL, this.httpOptions).pipe(
+      map(({data}: IProductListResponse) => {
+        const result = data.sort((a, b) => {
+          if (sorting === DESC) {
+            return b.price - a.price
+          } else if (sorting === ASC) {
+            return a.price - b.price
+          } else if (sorting === 'popular') {
+            return b.id - a.id
+          } else if (sorting === 'popular') {
+            return a.id - b.id
+          }
+        })
+        return result
+      }),
       catchError(err => {
         return throwError(err);
       })

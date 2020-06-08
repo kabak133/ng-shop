@@ -55,7 +55,7 @@ import {environment} from "../environments/environment";
   imports: [
     NgxsModule.forRoot([...stateList], ngxsConfig),
     NgxsReduxDevtoolsPluginModule.forRoot({disabled: environment.production}),
-    NgxsLoggerPluginModule.forRoot({disabled: environment.production}),
+    NgxsLoggerPluginModule.forRoot({disabled:true}),
 
     BrowserModule,
     AppRoutingModule,
