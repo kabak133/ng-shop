@@ -35,6 +35,7 @@ import {ClickStopPropagation} from "./directives/click-stop-propagation";
 import {ApiProductsService} from "../services/api/api-products.service";
 import {HttpClientModule} from "@angular/common/http";
 import {environment} from "../environments/environment";
+import {ApiCartService} from "../services/api/api-cart.service";
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import {environment} from "../environments/environment";
   imports: [
     NgxsModule.forRoot([...stateList], ngxsConfig),
     NgxsReduxDevtoolsPluginModule.forRoot({disabled: environment.production}),
-    NgxsLoggerPluginModule.forRoot({disabled: true}),
+    NgxsLoggerPluginModule.forRoot({disabled: false}),
 
     BrowserModule,
     AppRoutingModule,
@@ -65,7 +66,7 @@ import {environment} from "../environments/environment";
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [ApiProductsService],
+  providers: [ApiProductsService, ApiCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

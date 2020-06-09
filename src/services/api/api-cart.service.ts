@@ -1,14 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
-import {IProductListResponse, ProductItemModel} from "../../shared/models/product-item-model";
+
 import {catchError, map} from "rxjs/operators";
+import {ICartItem, ICartResponse} from "../../shared/models/cart.models";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiCartService {
-  private productsURL = 'assets/mocks/products.json';
+  private cartURL = 'assets/mocks/cart.json';
 
   private httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -21,11 +22,11 @@ export class ApiCartService {
     this.httpOptions.headers.append('Authorization', 'Basic ' + 'Token');
   }
 
-  /** get products from API */
-  public getCart(): Observable<ProductItemModel[]> {
+  /** get products in cart from API */
+  public getCart(): Observable<ICartItem[]> {
     this.createAuthorizationHeader()
-    return this.http.get(this.productsURL, this.httpOptions).pipe(
-      map(({data}: IProductListResponse) => data),
+    return this.http.get(this.cartURL, this.httpOptions).pipe(
+      map(({data}: ICartResponse) => data),
       catchError(err => {
         return throwError(err);
       })

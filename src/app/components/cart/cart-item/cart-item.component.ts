@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgModel} from '@angular/forms';
+import {ICartItem} from "../../../../shared/models/cart.models";
 
 @Component({
   selector: 'app-cart-item',
@@ -8,16 +9,7 @@ import {NgModel} from '@angular/forms';
 })
 export class CartItemComponent implements OnInit {
 
-  productItem = {
-    name: 'Кроссовки «Kaiwa» Y3 x Adidas',
-    price: 320,
-    count: 2,
-    images: [
-      {
-        thumbImage: '/assets/img/product-images/p2.jpg',
-      }
-    ]
-  }
+  @Input() productItem: ICartItem;
 
   constructor() {
   }

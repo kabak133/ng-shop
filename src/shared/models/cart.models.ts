@@ -8,5 +8,8 @@ export interface ICartItem {
 }
 
 export class CartStateModel {
-  public items: ICartItem[];
+  public productInCart: ICartItem[];
+}
+export interface ICartResponse {
+  data: ICartItem[]
 }

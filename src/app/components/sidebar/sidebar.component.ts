@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {slideUpDown} from "../../animations/slideUpDown";
 import {Store} from "@ngxs/store";
 import {
-  GetProductsListAction,
-  GetProductsListByCategory, GetProductsListByCategorySort, ProductsListBySorting
+  GetProductsListByCategorySort
 } from "../../../shared/state/products-list/products-list.actions";
 
 export const DESC = "decs"

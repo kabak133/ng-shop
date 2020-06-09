@@ -21,13 +21,14 @@
 
         <div class="shop-cart-products-list">
           <app-cart-item *ngFor="let item of productsInCart"
+                         [productItem]="item"
           ></app-cart-item>
         </div>
       </perfect-scrollbar>
 
       <div class="total-count-wrapper">
         <div class="total-count-title">Итого</div>
-        <div class="total-count">{{ 666 | currency: 'USD' : 'symbol' : '1.0-0'}}</div>
+        <div class="total-count">{{ totalPrice | currency: 'USD' : 'symbol' : '1.0-0'}}</div>
       </div>
     </div>
 
