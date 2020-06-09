@@ -24,8 +24,10 @@
   }
 
   &.shop-car-empty {
-    opacity: $opacity-elements;
-    cursor: default;
+    .cart-icon{
+      opacity: $opacity-elements;
+      cursor: default;
+    }
 
     .shop-cart-count {
       display: none;

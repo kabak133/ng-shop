@@ -8,7 +8,7 @@
        class="shop-cart-count">{{countProducts}}</div>
 
 
-  <div *ngIf="cartIsShow"
+  <div *ngIf="cartIsShow && countProducts"
        [@slideInOut]
        class="shop-cart-container">
     <div (click)="hideSideCart()"

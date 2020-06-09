@@ -15,6 +15,17 @@
       "price": 240,
       "count": 1,
       "thumbImage": "/assets/img/product-images/p3.jpg"
+    },
+    {
+
+      "id": 5,
+      "name": "Кроссовки с пряжками",
+      "category": "КРОССОВКИ",
+      "price": 390,
+      "count": 3,
+      "thumbImage": "/assets/img/product-images/p5.jpg"
+
+
     }
   ]
 }

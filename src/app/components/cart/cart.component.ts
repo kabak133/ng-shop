@@ -32,6 +32,7 @@ export class CartComponent implements OnInit {
     this.cartItems$
       .subscribe(cartItems => {
         this.productsInCart = cartItems
+        this.countProducts = cartItems.reduce((acc, {count}) => acc + count, 0 )
         this.totalPrice = cartItems.reduce((acc, {price}) => acc + price, 0 )
 
       })
