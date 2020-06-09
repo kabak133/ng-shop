@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
 import {ICartItem} from "../../../shared/models/cart.models";
 import {map} from "rxjs/operators";
 import {log} from "util";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
@@ -23,7 +24,7 @@ export class CartComponent implements OnInit {
 
   @Select(CartState.cartItems) cartItems$: Observable<ICartItem[]>
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private route: Router) {
   }
 
   ngOnInit(): void {
@@ -31,8 +32,8 @@ export class CartComponent implements OnInit {
     this.cartItems$
       .subscribe(cartItems => {
         this.productsInCart = cartItems
-        this.countProducts = cartItems.reduce((acc, {count}) => acc + count, 0 )
-        this.totalPrice = cartItems.reduce((acc, {price}) => acc + price, 0 )
+        this.countProducts = cartItems.reduce((acc, {count}) => acc + count, 0)
+        this.totalPrice = cartItems.reduce((acc, {price}) => acc + price, 0)
 
       })
   }
@@ -47,6 +48,11 @@ export class CartComponent implements OnInit {
 
   hideSideCart(): void {
     this.cartIsShow = false
+  }
+
+  moveToCart() {
+    this.hideSideCart()
+    this.route.navigate(['cart'])
   }
 
 }

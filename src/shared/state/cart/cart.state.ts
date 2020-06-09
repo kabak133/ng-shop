@@ -9,7 +9,7 @@ import {patch, removeItem, updateItem, append} from "@ngxs/store/operators";
 
 export class CartItemModel {
   create(id = 1, name = '', price = 0, count = 1, thumbImage = '') {
-    return { id, name, price, count, thumbImage };
+    return {id, name, price, count, thumbImage};
   }
 }
 

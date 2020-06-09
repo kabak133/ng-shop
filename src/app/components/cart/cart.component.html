@@ -1,5 +1,5 @@
-<div [class.shop-car-empty]="emptyCart()"
-     (click.outside)="hideSideCart()"
+<div (click.outside)="hideSideCart()"
+     [class.shop-car-empty]="emptyCart()"
      class="shop-cart">
 
   <a class="cart-icon" routerLink="cart"></a>
@@ -34,7 +34,9 @@
 
 
     <div class="shop-cart-footer">
-      <button class="btn btn-full-width btn-white">КУПИТЬ</button>
+      <button (click)="moveToCart()"
+              class="btn btn-full-width btn-white">КУПИТЬ
+      </button>
     </div>
   </div>
 </div>

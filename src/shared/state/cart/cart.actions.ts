@@ -17,6 +17,7 @@ export class CartGet {
 
 export class CartSetCountItem {
   static readonly type = '[Cart] Set count product item to cart';
-  constructor(public pl:ICartItem) {
+
+  constructor(public pl: ICartItem) {
   }
 }
