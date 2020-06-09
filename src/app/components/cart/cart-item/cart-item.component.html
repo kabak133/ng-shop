@@ -8,7 +8,7 @@
     <div class="cart-item-info-name">{{productItem.name}}</div>
     <div class="cart-item-info-count-wrapper">
       <div class="cart-item-info-count-select">
-        <div (click)="decrementCountProduct()"
+        <div (click.stop)="decrementCountProduct()"
              class="count-select decrement-count"
         > -
         </div>
@@ -21,7 +21,7 @@
                name="count-products"
                type="number"
         >
-        <div (click)="incrementCountProduct()"
+        <div (click.stop)="incrementCountProduct()"
              class="count-select increment-count"> +
         </div>
       </div>

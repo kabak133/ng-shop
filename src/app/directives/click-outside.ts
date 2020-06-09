@@ -1,4 +1,5 @@
 import {Directive, ElementRef, EventEmitter, OnDestroy, OnInit, Output, Renderer2} from "@angular/core";
+import {log} from "util";
 
 @Directive({
   selector: "[click.outside]"
