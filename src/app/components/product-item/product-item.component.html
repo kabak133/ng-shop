@@ -1,4 +1,5 @@
-<div (click)="moveToProductDetails()" class="product-item">
+<div (click)="moveToProductDetails()"
+     class="product-item">
   <div class="product-item-preview">
     <img [src]="setLargeImage()"
          alt="p1"
@@ -35,7 +36,11 @@
             class="product-item-counsel-arrow product-item-counsel-arrow-next"
 
       ></span>
-
+      <div class="add-to-cart"
+        (click.stop)="addToCart()"
+      >
+        <i class="cart-icon"></i>
+      </div>
 
     </div>
     <div class="product-item-details">

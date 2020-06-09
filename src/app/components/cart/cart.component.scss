@@ -24,7 +24,7 @@
   }
 
   &.shop-car-empty {
-    .cart-icon{
+    .cart-icon {
       opacity: $opacity-elements;
       cursor: default;
     }
@@ -70,6 +70,12 @@
     padding: 40px 0;
     font-size: $font-size-sl;
     font-weight: $font-weight-bold;
+  }
+
+  :host{
+    .ps-content {
+      padding-right: 15px;
+    }
   }
 
 

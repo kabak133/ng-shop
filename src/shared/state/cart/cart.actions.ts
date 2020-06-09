@@ -1,9 +1,11 @@
 import {ICartItem} from "../../models/cart.models";
+import {ProductItemModel} from "../../models/product-item-model";
 
 export class CartAdd {
-  static readonly type = '[Cart] Add item';
+  static readonly type = '[Cart] Add to art';
 
-  constructor(public payload: string) {
+  constructor(public payload: ProductItemModel) {
+    console.log(payload)
   }
 }
 

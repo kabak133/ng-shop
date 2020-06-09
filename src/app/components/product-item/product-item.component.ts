@@ -3,6 +3,9 @@ import {NgImageSliderComponent} from "ng-image-slider";
 import {Router} from "@angular/router";
 import {ProductItemImageModel, ProductItemModel} from "../../../shared/models/product-item-model";
 
+import {Store} from "@ngxs/store";
+import {CartAdd} from "../../../shared/state/cart/cart.actions";
+
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -18,7 +21,7 @@ export class ProductItemComponent implements OnInit {
   indexLargeImage: number;
   imagesForSlider: ProductItemImageModel[]
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private store: Store) {
   }
 
   ngOnInit(): void {
@@ -51,5 +54,9 @@ export class ProductItemComponent implements OnInit {
 
   handlerClickSlider(e) {
     console.log(e)
+  }
+
+  addToCart() {
+    this.store.dispatch(new CartAdd(this.item))
   }
 }
