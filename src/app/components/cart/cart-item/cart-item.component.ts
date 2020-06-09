@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NgModel} from '@angular/forms';
 import {ICartItem} from "../../../../shared/models/cart.models";
+import {Store} from "@ngxs/store";
+import {CartSetCountItem} from "../../../../shared/state/cart/cart.actions";
 
 @Component({
   selector: 'app-cart-item',
@@ -10,11 +11,13 @@ import {ICartItem} from "../../../../shared/models/cart.models";
 export class CartItemComponent implements OnInit {
 
   @Input() productItem: ICartItem;
+  countOfProducts = 0
 
-  constructor() {
+  constructor(private store: Store) {
   }
 
   ngOnInit(): void {
+    this.countOfProducts = this.productItem.count
   }
 
   productCountChanged({model}) {
@@ -22,15 +25,15 @@ export class CartItemComponent implements OnInit {
   }
 
   decrementCountProduct() {
-    this.setCountProducts(this.productItem.count - 1)
+    this.setCountProducts(this.countOfProducts - 1)
   }
 
   incrementCountProduct() {
-    this.setCountProducts(this.productItem.count + 2)
+    this.setCountProducts(this.countOfProducts + 1)
   }
 
   setCountProducts(count: number) {
-    this.productItem.count = count
+    this.store.dispatch(new CartSetCountItem({...this.productItem, count}))
   }
 
 }

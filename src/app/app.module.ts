@@ -56,7 +56,7 @@ import {ApiCartService} from "../services/api/api-cart.service";
   imports: [
     NgxsModule.forRoot([...stateList], ngxsConfig),
     NgxsReduxDevtoolsPluginModule.forRoot({disabled: environment.production}),
-    NgxsLoggerPluginModule.forRoot({disabled: false}),
+    NgxsLoggerPluginModule.forRoot({disabled: true}),
 
     BrowserModule,
     AppRoutingModule,

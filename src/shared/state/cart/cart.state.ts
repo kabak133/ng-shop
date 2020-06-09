@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
 import {State, Action, StateContext, Selector} from '@ngxs/store';
-import {CartGet} from './cart.actions';
+import {CartGet, CartSetCountItem} from './cart.actions';
 import {CartStateModel, ICartItem} from "../../models/cart.models";
 
 import {ApiCartService} from "../../../services/api/api-cart.service";
 import {take} from "rxjs/operators";
+import {patch, removeItem, updateItem} from "@ngxs/store/operators";
 
 
 const defaults = {
@@ -21,7 +22,7 @@ export class CartState {
   }
 
   @Selector()
-  static cartItems(state: CartStateModel){
+  static cartItems(state: CartStateModel) {
     return state.productInCart
   }
 
@@ -33,12 +34,29 @@ export class CartState {
         take(1)
       )
       .subscribe((cartItems: ICartItem[]) => {
-        console.log(cartItems)
         patchState({
           productInCart: cartItems
         })
       })
+  }
 
-
+  @Action(CartSetCountItem)
+  setCountItem({getState, setState, patchState}: StateContext<CartStateModel>, {pl: {id, count}}) {
+    if (count > 0) {
+      setState(
+        patch({
+          productInCart: updateItem(
+            item => item.id === id,
+            patch({count: count})
+          )
+        }))
+    } else {
+      setState(
+        patch({
+          productInCart: removeItem(
+            item => item.id === id
+          )
+        }))
+    }
   }
 }
