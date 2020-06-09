@@ -53,7 +53,6 @@ export class ProductItemComponent implements OnInit {
   }
 
   handlerClickSlider(e) {
-    console.log(e)
   }
 
   addToCart() {

@@ -1,15 +1,15 @@
 <div [class.shop-car-empty]="emptyCart()"
+     (click.outside)="hideSideCart()"
      class="shop-cart">
 
-  <a class="cart-icon" routerLink="cart"
-
-  ></a>
+  <a class="cart-icon" routerLink="cart"></a>
   <div (click)="showSideCart()"
        class="shop-cart-count">{{countProducts}}</div>
 
 
   <div *ngIf="cartIsShow && countProducts"
        [@slideInOut]
+
        class="shop-cart-container">
     <div (click)="hideSideCart()"
          class="shop-cart-close">

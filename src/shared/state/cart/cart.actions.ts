@@ -5,7 +5,6 @@ export class CartAdd {
   static readonly type = '[Cart] Add to art';
 
   constructor(public payload: ProductItemModel) {
-    console.log(payload)
   }
 }
 

@@ -65,7 +65,6 @@ export class ApiProductsService {
 
 
   public getProductsCategorySorting({category, sorting}) {
-    console.log('getProductsCategorySorting', {category, sorting})
     return this.http.get(this.productsURL, this.httpOptions).pipe(
       map(({data}: IProductListResponse) => {
 

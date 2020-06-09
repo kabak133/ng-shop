@@ -2,6 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
+import {environment} from "../environments/environment";
 
 //Libs
 import {NgImageSliderModule} from "ng-image-slider";
@@ -31,11 +33,14 @@ import {ProductsListComponent} from './components/products-list/products-list.co
 import {ProductItemComponent} from './components/product-item/product-item.component';
 import {CartComponent} from './components/cart/cart.component';
 import {CartItemComponent} from './components/cart/cart-item/cart-item.component';
-import {ClickStopPropagation} from "./directives/click-stop-propagation";
+
+//Services
 import {ApiProductsService} from "../services/api/api-products.service";
-import {HttpClientModule} from "@angular/common/http";
-import {environment} from "../environments/environment";
 import {ApiCartService} from "../services/api/api-cart.service";
+
+//Directives
+import {ClickStopPropagation} from "./directives/click-stop-propagation";
+import {ClickOutSide} from "./directives/click-outside";
 
 
 @NgModule({
@@ -51,7 +56,8 @@ import {ApiCartService} from "../services/api/api-cart.service";
     CartComponent,
     CartItemComponent,
     CartPageComponent,
-    ClickStopPropagation
+    ClickStopPropagation,
+    ClickOutSide
   ],
   imports: [
     NgxsModule.forRoot([...stateList], ngxsConfig),

@@ -27,7 +27,6 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('cart')
     this.store.dispatch(new CartGet)
     this.cartItems$
       .subscribe(cartItems => {
