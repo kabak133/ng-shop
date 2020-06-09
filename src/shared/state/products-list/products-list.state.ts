@@ -7,7 +7,7 @@ import {
   ProductsListBySorting
 } from './products-list.actions';
 import {ProductItemModel} from "../../models/product-item-model";
-import {ApiProductsService} from "../../../services/api-products.service";
+import {ApiProductsService} from "../../../services/api/api-products.service";
 
 import {tap} from "rxjs/operators";
 

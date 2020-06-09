@@ -27,7 +27,7 @@
       padding: 7.5px 0;
       cursor: pointer;
       &.active{
-        font-weight: $font-weight-bold;
+        text-shadow: 1px 0 0 #000;
       }
     }
   }

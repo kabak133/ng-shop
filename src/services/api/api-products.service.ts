@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
-import {IProductListResponse, ProductItemModel} from "../shared/models/product-item-model";
+import {IProductListResponse, ProductItemModel} from "../../shared/models/product-item-model";
 import {catchError, map} from "rxjs/operators";
-import {ASC, DESC} from "../shared/types/constants";
+import {ASC, DESC} from "../../shared/types/constants";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiProductsService {
-  private productsURL = 'assets/products.json';
+  private productsURL = 'assets/mocks/products.json';
 
   private httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -40,7 +40,7 @@ export class ApiProductsService {
     );
   }
 
-    /** get products from API with imitation sorting by server */
+  /** get products from API with imitation sorting by server */
   public getProductsSorting({sorting}): Observable<ProductItemModel[]> {
     return this.http.get(this.productsURL, this.httpOptions).pipe(
       map(({data}: IProductListResponse) => {
@@ -64,17 +64,17 @@ export class ApiProductsService {
   }
 
 
-  public getProductsCategorySorting({category, sorting}){
+  public getProductsCategorySorting({category, sorting}) {
     console.log('getProductsCategorySorting', {category, sorting})
     return this.http.get(this.productsURL, this.httpOptions).pipe(
       map(({data}: IProductListResponse) => {
 
         let result = data
-        if(category){
+        if (category) {
           result = result.filter(el => el.category.toLowerCase() === category.toLowerCase())
         }
 
-        if(sorting){
+        if (sorting) {
           result = result.sort((a, b) => {
             if (sorting === DESC) {
               return b.price - a.price
@@ -92,3 +92,5 @@ export class ApiProductsService {
     )
   }
 }
+
+

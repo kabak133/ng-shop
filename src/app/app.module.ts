@@ -32,7 +32,7 @@ import {ProductItemComponent} from './components/product-item/product-item.compo
 import {CartComponent} from './components/cart/cart.component';
 import {CartItemComponent} from './components/cart/cart-item/cart-item.component';
 import {ClickStopPropagation} from "./directives/click-stop-propagation";
-import {ApiProductsService} from "../services/api-products.service";
+import {ApiProductsService} from "../services/api/api-products.service";
 import {HttpClientModule} from "@angular/common/http";
 import {environment} from "../environments/environment";
 
