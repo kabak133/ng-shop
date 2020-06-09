@@ -26,16 +26,19 @@
       text-align: right;
       padding: 7.5px 0;
       cursor: pointer;
-      &.active{
+
+      &.active {
         text-shadow: 1px 0 0 #000;
       }
     }
   }
-  .select-icon{
+
+  .select-icon {
     transform: rotate(135deg) translate(5px, -1px);
   }
-  &.shop-select-open{
-    .select-icon{
+
+  &.shop-select-open {
+    .select-icon {
       transform: rotate(-45deg);
     }
   }

@@ -40,20 +40,20 @@ export class ProductsListState {
   }
 
   @Action(GetProductsListByCategory)
-  getProductsListByCategory({patchState}: StateContext<ProductsListStateModel>, {category}:GetProductsListByCategory) {
+  getProductsListByCategory({patchState}: StateContext<ProductsListStateModel>, {category}: GetProductsListByCategory) {
     return this.apiProductsService.getProductsByCategory({category})
       .pipe(tap(productsList => patchState({productsList: productsList})))
   }
 
 
   @Action(ProductsListBySorting)
-  getProductsListBySorting({patchState}: StateContext<ProductsListStateModel>, {sorting}:ProductsListBySorting) {
+  getProductsListBySorting({patchState}: StateContext<ProductsListStateModel>, {sorting}: ProductsListBySorting) {
     return this.apiProductsService.getProductsSorting({sorting})
       .pipe(tap(productsList => patchState({productsList: productsList})))
   }
 
   @Action(GetProductsListByCategorySort)
-  GetProductsListByCategorySort({patchState}: StateContext<ProductsListStateModel>, {category, sorting}:GetProductsListByCategorySort) {
+  GetProductsListByCategorySort({patchState}: StateContext<ProductsListStateModel>, {category, sorting}: GetProductsListByCategorySort) {
     return this.apiProductsService.getProductsCategorySorting({category, sorting})
       .pipe(tap(productsList => patchState({productsList: productsList})))
   }

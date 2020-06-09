@@ -1,23 +1,24 @@
-.container-fluid{
+.container-fluid {
   margin-left: auto;
   margin-right: auto;
 
   padding-left: 60px;
   padding-right: 90px;
 
-  @media all and (max-width: 576px){
+  @media all and (max-width: 576px) {
     padding-left: 15px;
     padding-right: 15px;
   }
 }
 
-.row{
+.row {
   margin-left: -34px;
   margin-right: -34px;
   display: flex;
   flex-wrap: wrap;
 }
-.col{
+
+.col {
   width: 100%;
   min-height: 1px;
   padding-left: 34px;
@@ -26,12 +27,12 @@
   max-width: calc(100% / 3);
 
 
-  @media all and (max-width: 1024px){
+  @media all and (max-width: 1024px) {
     flex: 0 0 calc(100% / 2);
     max-width: calc(100% / 2);
   }
 
-  @media all and (max-width: 720px){
+  @media all and (max-width: 720px) {
     flex: 0 0 100%;
     max-width: 100%;
   }

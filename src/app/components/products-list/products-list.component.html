@@ -1,6 +1,6 @@
 <div class="wrapper-product-list">
   <div class="row">
-    <div class="col" *ngFor="let item of productList">
+    <div *ngFor="let item of productList" class="col">
       <app-product-item [item]="item"></app-product-item>
     </div>
   </div>

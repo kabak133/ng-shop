@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Рубашка на пуговицах",
+      "category": "ПЛАЩИ",
+      "price": 320,
+      "count": 2,
+      "thumbImage": "/assets/img/product-images/p1.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Кроссовки «Kaiwa» Y3",
+      "category": "КРОССОВКИ",
+      "price": 240,
+      "count": 1,
+      "thumbImage": "/assets/img/product-images/p3.jpg"
+    }
+  ]
+}

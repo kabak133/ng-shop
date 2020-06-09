@@ -1,4 +1,4 @@
-.btn{
+.btn {
   display: inline-block;
   font-family: $font-family;
   font-weight: $font-weight-bold;
@@ -32,21 +32,21 @@
   }
 
   &:not([disabled]):hover,
-  &:not(.disabled):hover{
+  &:not(.disabled):hover {
     transition: opacity 0.22s;
     opacity: $opacity-hover
   }
 
-  &.btn-dark{
+  &.btn-dark {
     border-color: $btn-color-dark;
   }
 
-  &.btn-white{
+  &.btn-white {
     color: $btn-color-white;
     border-color: $btn-color-white;
   }
 
-  &.btn-full-width{
+  &.btn-full-width {
     width: 100%;
   }
 

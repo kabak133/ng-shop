@@ -1,21 +1,21 @@
 @import "partials/varitables";
 
-.side-bar{
-  .side-bar-menu{
+.side-bar {
+  .side-bar-menu {
     font-style: normal;
     font-weight: 300;
     font-size: $font-size-sm;
     letter-spacing: 0.666667px;
     text-transform: uppercase;
 
-    .side-bar-menu_item{
+    .side-bar-menu_item {
       padding: 8px 15px;
       margin-bottom: 20px;
       list-style: none;
       cursor: pointer;
 
 
-      &.active{
+      &.active {
         text-shadow: 1px 0 0 #000;
       }
     }

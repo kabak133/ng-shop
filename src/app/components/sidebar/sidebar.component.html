@@ -1,43 +1,47 @@
 <div class="side-bar">
   <ul class="side-bar-menu">
-    <li class="side-bar-menu_item"
+    <li (click)="selectCategory(undefined)"
         [class.active]="selectedCategory === undefined"
-        (click)="selectCategory(undefined)">Все</li>
-    <li class="side-bar-menu_item"
+        class="side-bar-menu_item">Все
+    </li>
+    <li (click)="selectCategory('Плащи')"
         [class.active]="selectedCategory === 'Плащи'"
-        (click)="selectCategory('Плащи')">Плащи</li>
-    <li class="side-bar-menu_item"
+        class="side-bar-menu_item">Плащи
+    </li>
+    <li (click)="selectCategory('Кроссовки')"
         [class.active]="selectedCategory === 'Кроссовки'"
-        (click)="selectCategory('Кроссовки')">Кроссовки</li>
-    <li class="side-bar-menu_item"
+        class="side-bar-menu_item">Кроссовки
+    </li>
+    <li (click)="selectCategory('Рубашки')"
         [class.active]="selectedCategory === 'Рубашки'"
-        (click)="selectCategory('Рубашки')">Рубашки</li>
+        class="side-bar-menu_item">Рубашки
+    </li>
 
     <!--TODO: to separate single component   -->
     <li class="side-bar-menu_item">
-      <span class="shop-select"
-      [class.shop-select-open]="showSelect">
-        <span class="select-label"
-          (click)="showSelect = !showSelect"
+      <span [class.shop-select-open]="showSelect"
+            class="shop-select">
+        <span (click)="showSelect = !showSelect"
+              class="select-label"
         >Сортировать <i class="select-icon"></i></span>
-        <ul class="select-options"
-            *ngIf="showSelect"
-            [@slideUpDown]>
-          <li class="select-options-item active"
+        <ul *ngIf="showSelect"
+            [@slideUpDown]
+            class="select-options">
+          <li (click)="selectSorting(DESC)"
               [class.active]="selectedSorting === DESC"
-              (click)="selectSorting(DESC)"
+              class="select-options-item active"
           >От дорогих к дешевым</li>
-          <li class="select-options-item"
+          <li (click)="selectSorting(ASC)"
               [class.active]="selectedSorting === ASC"
-              (click)="selectSorting(ASC)"
+              class="select-options-item"
           >От дешевых к дорогим</li>
-          <li class="select-options-item"
+          <li (click)="selectSorting('popular')"
               [class.active]="selectedSorting === 'popular'"
-              (click)="selectSorting('popular')"
+              class="select-options-item"
           >Популярные</li>
-          <li class="select-options-item"
+          <li (click)="selectSorting('new')"
               [class.active]="selectedSorting === 'new'"
-              (click)="selectSorting('new')"
+              class="select-options-item"
           >Новые</li>
         </ul>
       </span>

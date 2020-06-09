@@ -1,5 +1,5 @@
 export interface ProductItemImageModel {
-  thumbImage:string
+  thumbImage: string
 }
 
 /** product item  */
@@ -13,6 +13,6 @@ export interface ProductItemModel {
   images: ProductItemImageModel[]
 }
 
-export interface IProductListResponse{
+export interface IProductListResponse {
   data: ProductItemModel[]
 }

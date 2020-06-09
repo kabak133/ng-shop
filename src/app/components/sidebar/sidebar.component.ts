@@ -43,7 +43,7 @@ export class SidebarComponent implements OnInit {
 
 
   selectByCategoryWithSort() {
-   this.store.dispatch(new GetProductsListByCategorySort(this.selectedCategory, this.selectedSorting))
+    this.store.dispatch(new GetProductsListByCategorySort(this.selectedCategory, this.selectedSorting))
   }
 
 }

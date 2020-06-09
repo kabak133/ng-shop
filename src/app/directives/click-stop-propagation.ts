@@ -3,11 +3,11 @@ import {Directive, ElementRef, EventEmitter, HostListener, OnDestroy, OnInit, Ou
 @Directive({
   selector: "[click.stop]"
 })
-export class ClickStopPropagation implements OnInit, OnDestroy{
+export class ClickStopPropagation implements OnInit, OnDestroy {
   @Output("click.stop") stopPropEvent = new EventEmitter();
   unsubscribe;
 
-  constructor( private renderer : Renderer2, private element : ElementRef ) {
+  constructor(private renderer: Renderer2, private element: ElementRef) {
   }
 
   ngOnInit() {

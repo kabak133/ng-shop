@@ -9,7 +9,7 @@ import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 
 //Storage
 import {NgxsModule} from "@ngxs/store";
-import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
 import {ngxsConfig} from "../../ngxs.config";
 import {stateList} from "../shared/state";
@@ -55,7 +55,7 @@ import {environment} from "../environments/environment";
   imports: [
     NgxsModule.forRoot([...stateList], ngxsConfig),
     NgxsReduxDevtoolsPluginModule.forRoot({disabled: environment.production}),
-    NgxsLoggerPluginModule.forRoot({disabled:true}),
+    NgxsLoggerPluginModule.forRoot({disabled: true}),
 
     BrowserModule,
     AppRoutingModule,

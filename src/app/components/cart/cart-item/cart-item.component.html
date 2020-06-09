@@ -1,27 +1,29 @@
 <div class="cart-item-wrapper">
   <div class="cart-item-image-container">
     <img [src]="productItem.images[0].thumbImage"
-         class="cart-item-image"
-         alt="">
+         alt=""
+         class="cart-item-image">
   </div>
   <div class="cart-item-info">
     <div class="cart-item-info-name">{{productItem.name}}</div>
     <div class="cart-item-info-count-wrapper">
       <div class="cart-item-info-count-select">
-        <div class="count-select decrement-count"
-          (click)="decrementCountProduct()"
-        > - </div>
-        <input type="number"
-               class="count-products"
-               name="count-products"
-               min="0"
-               max="99"
-               #productCount="ngModel"
+        <div (click)="decrementCountProduct()"
+             class="count-select decrement-count"
+        > -
+        </div>
+        <input #productCount="ngModel"
                (change)="productCountChanged(productCount)"
                [(ngModel)]="productItem.count"
+               class="count-products"
+               max="99"
+               min="0"
+               name="count-products"
+               type="number"
         >
-        <div class="count-select increment-count"
-             (click)="incrementCountProduct()"> + </div>
+        <div (click)="incrementCountProduct()"
+             class="count-select increment-count"> +
+        </div>
       </div>
       <div class="cart-item-info-count-price">{{productItem.price | currency: 'USD' : 'symbol' : '1.0-0'}}</div>
     </div>

@@ -1,18 +1,18 @@
-<div class="shop-cart"
-     [class.shop-car-empty]="emptyCart()">
+<div [class.shop-car-empty]="emptyCart()"
+     class="shop-cart">
 
-  <a routerLink="cart" class="cart-icon"
+  <a class="cart-icon" routerLink="cart"
 
   ></a>
-  <div class="shop-cart-count"
-       (click)="showSideCart()">{{countProducts}}</div>
+  <div (click)="showSideCart()"
+       class="shop-cart-count">{{countProducts}}</div>
 
 
-  <div class="shop-cart-container"
-       *ngIf="cartIsShow"
-       [@slideInOut]>
-    <div class="shop-cart-close"
-         (click)="hideSideCart()">
+  <div *ngIf="cartIsShow"
+       [@slideInOut]
+       class="shop-cart-container">
+    <div (click)="hideSideCart()"
+         class="shop-cart-close">
       <div class="close-icon close-icon-white"></div>
     </div>
 

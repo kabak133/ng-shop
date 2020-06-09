@@ -49,7 +49,7 @@ export class ProductItemComponent implements OnInit {
     this.router.navigate(['/product', this.item.id]);
   }
 
-  handlerClickSlider(e){
+  handlerClickSlider(e) {
     console.log(e)
   }
 }
